@@ -15,19 +15,22 @@ class RepeaterMetaCallback
         );
 ?>
         <script type="text/javascript">
-            jQuery(document).ready(function($) {
-                $('#add-row').on('click', function() {
-                    var row = $('.empty-row.custom-repeter-text').clone(true);
-                    row.removeClass('empty-row custom-repeter-text').css('display', 'table-row');
-                    row.insertBefore('#repeatable-fieldset-one tbody>tr:last');
-                    return false;
-                });
+            function addSelect() {
+                const tbody = document.querySelector("#repeatable-fieldset-one > tbody");
+                const row = document.querySelectorAll(
+                    "tbody > .empty-row.custom-repeater-text"
+                )[0];
+                const clone = row.cloneNode(true);
+                new_row = tbody.appendChild(clone);
+                const my_class = new_row.classList;
+                my_class.remove("empty-row", "custom-repeater-text");
+                my_class.add("table-row");
+            }
 
-                $('.remove-row').on('click', function() {
-                    $(this).parents('tr').remove();
-                    return false;
-                });
-            });
+            function deleteRow(r) {
+                let i = r.parentNode.parentNode.rowIndex;
+                document.getElementById("repeatable-fieldset-one").deleteRow(i);
+            }
         </script>
 
         <table id="repeatable-fieldset-one" width="100%">
@@ -47,22 +50,7 @@ class RepeaterMetaCallback
                                 <a class="button remove-row" href="#1">Remove</a>
                             </td>
                         </tr>
-                    <?php
-                    }
-                else :
-                    ?>
-                    <tr>
-                        <td>
-                            <input type="text" style="width:98%;" name="title[]" placeholder="Heading" />
-                        </td>
-                        <td>
-                            <input type="text" style="width:98%;" name="tdesc[]" value="" placeholder="Description" />
-                        </td>
-                        <td>
-                            <a class="button  cmb-remove-row-button button-disabled" href="#">Remove</a>
-                        </td>
-                    </tr>
-                <?php endif; ?>
+                    <?php } endif; ?>
                 <tr class="empty-row custom-repeter-text" style="display: none">
                     <td>
                         <input type="text" style="width:98%;" name="title[]" placeholder="Heading" />

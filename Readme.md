@@ -11,3 +11,12 @@ I've encapsulated the functions into classes to be more clear for myself. Althou
 
 </p>
 </details>
+
+<details><summary>Step #2 Update jQuery into vanilla JS</summary>
+<p>
+ 
+- Updating javascript by converting jQuery into vanilla js. Althogh Wordpress still using jQuery it's a matter of time it'll be uodated into js as well IMO.
+- Adding assets to implement css file.
+ 
+</p>
+</details>
