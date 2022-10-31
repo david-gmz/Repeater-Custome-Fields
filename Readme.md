@@ -16,7 +16,8 @@ I've encapsulated the functions into classes to be more clear for myself. Althou
 <p>
  
 - Updating javascript by converting jQuery into vanilla js. Althogh Wordpress still using jQuery it's a matter of time it'll be uodated into js as well IMO.
-- Adding assets to implement css file.
+- Adding assets directory to store our css file.
+- Updating `class RepeaterMetaCallback` to work with JS.
  
 </p>
 </details>

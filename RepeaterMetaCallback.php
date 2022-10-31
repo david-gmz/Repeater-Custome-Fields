@@ -47,11 +47,12 @@ class RepeaterMetaCallback
                                 <input type="text" style="width:98%;" name="tdesc[]" value="<?php if ($field['tdesc'] != '') echo esc_attr($field['tdesc']); ?>" placeholder="Description" />
                             </td>
                             <td>
-                                <a class="button remove-row" href="#1">Remove</a>
+                                <button onclick="deleteRow(this)">Remove</button>
                             </td>
                         </tr>
-                    <?php } endif; ?>
-                <tr class="empty-row custom-repeter-text" style="display: none">
+                <?php }
+                endif; ?>
+                <tr class="empty-row custom-repeter-text">
                     <td>
                         <input type="text" style="width:98%;" name="title[]" placeholder="Heading" />
                     </td>
@@ -59,13 +60,13 @@ class RepeaterMetaCallback
                         <input type="text" style="width:98%;" name="tdesc[]" value="" placeholder="Description" />
                     </td>
                     <td>
-                        <a class="button remove-row" href="#">Remove</a>
+                        <button onclick="deleteRow(this)">Remove</button>
                     </td>
                 </tr>
 
             </tbody>
         </table>
-        <p><a id="add-row" class="button" href="#">Add another</a></p>
+        <button onclick="addSelect()">Add Row</button>
 <?php
     }
 }
